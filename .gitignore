@@ -13,5 +13,10 @@ client/public/Emmanuel Pedroza - Resume.pdf:Zone.Identifier
 
 # Dont include services
 api/*
+!api/.gitkeep
+
 client/*
+!client/.gitkeep
+
 socket-server/*
+!socket-server/.gitkeep
