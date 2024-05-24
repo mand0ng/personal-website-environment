@@ -1,0 +1,9 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/mand0ng/personal-website-api-service.git
+[submodule "client"]
+	path = client
+	url = https://github.com/mand0ng/personal-website-client-service.git
+[submodule "socket-server"]
+	path = socket-server
+	url = https://github.com/mand0ng/personal-website-socket-server-service.git
