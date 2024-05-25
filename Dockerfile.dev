@@ -33,9 +33,7 @@ RUN pip3 install playwright
 RUN playwright install --with-deps
 
 COPY ./socket-server/ ./socket-server/
-RUN cd /app/socket-server && yarn install
 
 COPY ./client/ ./client/
-RUN cd /app/client && yarn install
 
 EXPOSE 80
