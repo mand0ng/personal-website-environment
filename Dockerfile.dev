@@ -29,6 +29,7 @@ COPY ./api/ ./api/
 RUN pip3 install --upgrade pip
 RUN pip3 install -r /app/api/requirements.txt
 RUN pip3 install gunicorn
+RUN pip3 install watchdog
 RUN pip3 install playwright
 RUN playwright install --with-deps
 

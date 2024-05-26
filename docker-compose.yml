@@ -15,7 +15,7 @@ services:
       sh -c "
         cd /app/client && yarn install
         cd /app/socket-server && yarn install
-        cd /app/api && gunicorn -b :5000 manage:app & 
+        cd /app/api && watchmedo auto-restart --directory=./src --pattern=*.py --recursive -- gunicorn -b :5000 manage:app & 
         cd /app/socket-server && yarn start & 
         cd /app/client && yarn dev & 
         nginx -g 'daemon off;'
