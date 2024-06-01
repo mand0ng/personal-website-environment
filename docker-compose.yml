@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  perosnal-website: 
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 80:80
+    volumes:
+      - ./client:/app/client
+      - ./api:/app/api
+      - ./socket-server:/app/socket-server
+    command: >
+      sh -c "
+        cd /app/client && yarn install
+        cd /app/socket-server && yarn install
+        cd /app/api && gunicorn -b :5000 manage:app & 
+        cd /app/socket-server && yarn start & 
+        cd /app/client && yarn dev & 
+        nginx -g 'daemon off;'
+      "
